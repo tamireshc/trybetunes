@@ -100,29 +100,33 @@ class Album extends React.Component {
         data-testid="page-album"
       >
         <Header />
-        <div>
-          { musics
-            && (
-              <div>
-                <p data-testid="artist-name">{ firstItemMusicsState.artistName }</p>
-                <p data-testid="album-name">{ firstItemMusicsState.collectionName }</p>
+        <section className='album-container'>
+          <div className='album-details'>
+              { musics
+                && (
+                  <div className='album-musics'>
+                    <img src={ firstItemMusicsState.artworkUrl100 } alt="album" />
+                    <p data-testid="artist-name">{ firstItemMusicsState.artistName }</p>
+                    <p data-testid="album-name">{ firstItemMusicsState.collectionName }</p>
 
-              </div>
+                  </div>
 
-            ) }
-          { loading && <p>Carregando...</p> }
+                ) }
+            </div>
+            { loading && <p>Carregando...</p> }
+            <div>
 
-          { musicsNofav.map((item) => (<MusicCard
-            key={ item.trackId }
-            trackName={ item.trackName }
-            previewUrl={ item.previewUrl }
-            trackId={ item.trackId }
-            favMusic={ () => this.favMusic(item) }
-            check={ hasCheckTrue }
-          // onChange={ () => this.changeCheckers(item) }
-          />)) }
+              { musicsNofav.map((item) => (<MusicCard
+                key={ item.trackId }
+                trackName={ item.trackName }
+                previewUrl={ item.previewUrl }
+                trackId={ item.trackId }
+                favMusic={ () => this.favMusic(item) }
+                check={ hasCheckTrue }
+              // onChange={ () => this.changeCheckers(item) }
+              />)) }
 
-          {/* musicas.filter((item) => {
+              {/* musicas.filter((item) => {
             for (const i of favoriteSongs) {
               if (i.trackId === item.trackId) {
                 return false;
@@ -131,23 +135,25 @@ class Album extends React.Component {
             return true;
           }) */}
 
-          {/* const r = array.filter((elem) => !anotherArray.find(({ id }) => elem.id === id) && elem.sub); */ }
+              {/* const r = array.filter((elem) => !anotherArray.find(({ id }) => elem.id === id) && elem.sub); */ }
 
-          {/* https://stackoverflow.com/questions/53603040/filter-array-of-objects-by-another-array-of-objects
+              {/* https://stackoverflow.com/questions/53603040/filter-array-of-objects-by-another-array-of-objects
 Referencia de filtro para irar itens iquais entre arrays de objetos utilizada */}
 
-          { musicas.filter((i) => !favoriteSongs.find(({ trackId }) => (
-            i.trackId === trackId
-          ))).map((item) => (
-            <MusicCard
-              key={ item.trackId }
-              trackName={ item.trackName }
-              previewUrl={ item.previewUrl }
-              trackId={ item.trackId }
-              favMusic={ () => this.favMusic(item) }
-            />)) }
+              { musicas.filter((i) => !favoriteSongs.find(({ trackId }) => (
+                i.trackId === trackId
+              ))).map((item) => (
+                <MusicCard
+                  key={ item.trackId }
+                  trackName={ item.trackName }
+                  previewUrl={ item.previewUrl }
+                  trackId={ item.trackId }
+                  favMusic={ () => this.favMusic(item) }
+                />)) }
+            </div>
 
-        </div>
+       
+        </section>
 
       </div>
 

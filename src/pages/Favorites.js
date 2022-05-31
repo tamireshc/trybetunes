@@ -53,7 +53,7 @@ class Favorites extends React.Component {
       >
         <Header />
         { loading && <p>Carregando...</p> }
-        Favorites
+        <section className='favorites-container'>
         { favoriteSongs.map((item) => (<MusicCard
           key={ item.trackId }
           trackName={ item.trackName }
@@ -61,6 +61,7 @@ class Favorites extends React.Component {
           trackId={ item.trackId }
           favMusic={ () => this.removeSongsFunction(item) }
         />)) }
+        </section>
       </div>
 
     );

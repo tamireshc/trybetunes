@@ -34,12 +34,27 @@ class Header extends React.Component {
 
     return (
       <header data-testid="header-component">
-        { hasUserGet ? tagUser : <p>Carregando...</p> }
+        <div className='header-top'>
+          <h2>Music On-line</h2>
+          <div className='header-name'>
+          { <p>{hasUserGet}</p> ? tagUser : <p>Carregando...</p> }
+          </div> 
+        </div>
+        
         <nav>
           <ul>
+            <div className='link-to-search'>
             <Link data-testid="link-to-search" to="/search">Pesquisar</Link>
+            </div>
+            <div className='link-to-favorites'>
             <Link data-testid="link-to-favorites" to="/favorites">Músicas Favoritas</Link>
+            </div>
+            <div className='link-to-profile'>
             <Link data-testid="link-to-profile" to="/profile">Perfil</Link>
+            </div>
+            
+            
+            
           </ul>
         </nav>
       </header>

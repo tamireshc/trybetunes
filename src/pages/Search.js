@@ -68,11 +68,12 @@ class Search extends React.Component {
     const { nameSinger,
       foundAlbum, loading, albuns, noneAlbum, nameSingerForScreen } = this.state;
     const form = (
-      <div>
+      <div className='form-search'>
         <input
           type="text"
           name="nameSinger"
           data-testid="search-artist-input"
+          placeholder='Nome do Artista'
           onChange={ this.handleChange }
           value={ nameSinger }
         />
@@ -98,27 +99,28 @@ class Search extends React.Component {
 
         { loading ? <p>Carregando...</p> : form }
         { foundAlbum ? (
-          <p>
+          <p className='title-result'>
             Resultado de álbuns de:
             {' '}
             { nameSingerForScreen }
           </p>
         ) : ''}
+        <div className='album-results'>
         { foundAlbum && albuns[0] !== ''
           ? albuns[0].map((item) => (
-            <div key={ item.collectionId }>
-              <Link
+            <div key={ item.collectionId } className="card-album">
+              <img src={ item.artworkUrl100 } alt="" />
+              <strong><p className='artist-name'>{ item.artistName }</p></strong> 
+              <p className='collection-name'>{ item.collectionName }</p>
+              <h3><Link
                 to={ `/album/${item.collectionId}` }
                 data-testid={ `link-to-album-${item.collectionId}` }
               >
                 Ver Album
-              </Link>
-              <p>{ item.artistName }</p>
-              <img src={ item.artworkUrl100 } alt="" />
-              <p>{ item.collectionName }</p>
-              <p>{ item.artistName }</p>
+              </Link>  </h3> 
             </div>
           )) : '' }
+          </div>
         { noneAlbum ? <p>Nenhum álbum foi encontrado</p> : '' }
 
       </div>

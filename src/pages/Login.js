@@ -54,10 +54,13 @@ class Login extends React.Component {
   render() {
     const { name, loading, logado } = this.state;
     const form = (
+      <div className='container'>
+        <h1>Music On-Line</h1>
       <div data-testid="page-login">
         <input
           type="text"
           name="name"
+          placeholder='Nome'
           data-testid="login-name-input"
           onChange={ this.handleChange }
           onKeyDown={ this.disableButton }
@@ -74,6 +77,7 @@ class Login extends React.Component {
         >
           Entrar
         </button>
+      </div>
       </div>
     );
 
