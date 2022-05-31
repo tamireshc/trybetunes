@@ -10,6 +10,7 @@ class Favorites extends React.Component {
     this.state = {
       loading: false,
       favoriteSongs: [],
+      hasCheckTrue:true,
 
     };
   }
@@ -45,7 +46,7 @@ class Favorites extends React.Component {
   }
 
   render() {
-    const { favoriteSongs, loading } = this.state;
+    const { favoriteSongs, loading, hasCheckTrue } = this.state;
     // const favorite = [ ...favoriteSongs ];
 
     return (
@@ -57,10 +58,12 @@ class Favorites extends React.Component {
         <section className='favorites-container'>
         { favoriteSongs.map((item) => (<MusicCard
           key={ item.trackId }
+          imageAlbum ={item.artworkUrl100}
           trackName={ item.trackName }
           previewUrl={ item.previewUrl }
           trackId={ item.trackId }
           favMusic={ () => this.removeSongsFunction(item) }
+          check={ hasCheckTrue }
         />)) }
         </section>
       </div>
