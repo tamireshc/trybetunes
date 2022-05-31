@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
+import Loading from './Loading';
 
 class Header extends React.Component {
   constructor() {
@@ -38,7 +39,7 @@ class Header extends React.Component {
           <Link to="/"><h2>Music On-line</h2></Link>
           
           <div className='header-name'>
-          { <p>{hasUserGet}</p> ? tagUser : <p>Carregando...</p> }
+          { <p>{hasUserGet}</p> ? tagUser : <Loading /> }
           </div> 
         </div>
         

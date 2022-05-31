@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 const MIN_LENGTH_INPUT = 2;
@@ -97,7 +98,7 @@ class Search extends React.Component {
         <Header />
         {/* <p>Resultado de álbuns de: { nameSinger }</p>  */ }
 
-        { loading ? <p>Carregando...</p> : form }
+        { loading ? <Loading /> : form }
         { foundAlbum ? (
           <p className='title-result'>
             Resultado de álbuns de:

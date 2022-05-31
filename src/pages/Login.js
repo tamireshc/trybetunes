@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
 
 const MIN_LENGTH_INPUT = 3;
@@ -84,7 +85,7 @@ class Login extends React.Component {
     return (
       <>
         { logado ? <Redirect to="/search" /> : '' }
-        { loading ? <p>Carregando...</p> : form }
+        { loading ? <Loading />: form }
       </>
 
     );

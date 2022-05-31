@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import Header from '../components/Header';
+import Loading from '../components/Loading';
 import { getUser, updateUser } from '../services/userAPI';
 
 class ProfileEdit extends React.Component {
@@ -78,7 +79,7 @@ class ProfileEdit extends React.Component {
         data-testid="page-profile-edit"
       >
         <Header />
-        { loading && <p>Carregando...</p> }
+        { loading && <Loading />}
         { hasUserSalve ? <Redirect to="/profile" /> : '' }
         <div className='profile-edit-container'>
           <label htmlFor="name">

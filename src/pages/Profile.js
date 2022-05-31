@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Loading from '../components/Loading';
 import { getUser } from '../services/userAPI';
 
 class Profile extends React.Component {
@@ -40,7 +41,7 @@ class Profile extends React.Component {
         data-testid="page-profile"
       >
         <Header />
-        { loading && <p>Carregando...</p> }
+        { loading && <Loading /> }
         { (
           <div className='profile-container'>
             <p>{ user.name }</p>

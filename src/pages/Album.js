@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import Loading from '../components/Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -113,7 +114,7 @@ class Album extends React.Component {
 
                 ) }
             </div>
-            { loading && <p>Carregando...</p> }
+            { loading && <Loading /> }
             <div>
 
               { musicsNofav.map((item) => (<MusicCard
