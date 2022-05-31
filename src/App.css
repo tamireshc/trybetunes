@@ -330,8 +330,6 @@ h2{
   
 }
 
-
-
 .profile-edit-container input {
   display: block;
   padding: 10px 15px;
@@ -358,8 +356,8 @@ h2{
   font-size: 1.2em;
 }
 
-.profile-edit-container button{
-  opacity: 50%;
+.profile-edit-container button:hover{
+  opacity: 90%;
 }
 
 .profile-edit-container button:disabled{
