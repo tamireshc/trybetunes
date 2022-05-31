@@ -35,7 +35,8 @@ class Header extends React.Component {
     return (
       <header data-testid="header-component">
         <div className='header-top'>
-          <h2>Music On-line</h2>
+          <Link to="/"><h2>Music On-line</h2></Link>
+          
           <div className='header-name'>
           { <p>{hasUserGet}</p> ? tagUser : <p>Carregando...</p> }
           </div> 

@@ -80,7 +80,7 @@ class ProfileEdit extends React.Component {
         <Header />
         { loading && <p>Carregando...</p> }
         { hasUserSalve ? <Redirect to="/profile" /> : '' }
-        <div>
+        <div className='profile-edit-container'>
           <label htmlFor="name">
             Nome:
             <input

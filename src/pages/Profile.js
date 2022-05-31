@@ -42,7 +42,7 @@ class Profile extends React.Component {
         <Header />
         { loading && <p>Carregando...</p> }
         { (
-          <div>
+          <div className='profile-container'>
             <p>{ user.name }</p>
             <Link to="/profile/edit">Editar perfil</Link>
 

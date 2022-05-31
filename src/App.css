@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body{
@@ -248,10 +249,54 @@ h2{
  margin-top: 80px;
 }
 
+.profile-container{
+  text-align: center;
+  padding: 80px;
+}
 
+.profile-container p {
+  font-family: sans-serif;
 
+}
+
+.profile-edit-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
   
+}
+
+.profile-edit-container input {
+  display: block;
+  padding: 10px 15px;
+  border: 0.5px gray solid;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 300px;
+  margin-right: 10px;
+  min-width: 300px
+}
+.profile-edit-container label {
  
+ font-family: sans-serif;
+ font-weight: 100;
+}
+  
+.profile-edit-container button{
+  padding: 10px 20px;
+  border: none;
+  color: #FAFAFA;
+  border-radius:  5px;
+  background-color:#1d2642;
+  min-width: 300px
+}
+
+.profile-edit-container button:disabled{
+  opacity: 50%;
+}
+
+
 
   
   
