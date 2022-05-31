@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  color: rgb(29, 29, 29);
 }
 
 body{
@@ -270,8 +271,54 @@ h2{
   padding: 80px;
 }
 
+.profile-container img{
+  border-radius: 50%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
 .profile-container p {
   font-family: sans-serif;
+
+}
+
+.profile-container button{
+  padding: 10px 40px;
+  border: 1px solid #1d2642;
+  color: #1d2642;
+  background-color: #FAFAFA;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-container button:hover{
+  opacity: 50%;
+  transition: 1s;
+}
+
+.profile-container .edit-name{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px;
+  color: #1d2642;
+}
+
+.profile-container .edit-email{
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1.1em;
+  padding: 10px;
+  color: #1d2642;
+}
+
+.profile-container .edit-description{
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1.1em;
+  padding: 10px;
+  padding-bottom: 20px;
+  color: #1d2642;
 
 }
 
@@ -282,6 +329,8 @@ h2{
   padding: 80px;
   
 }
+
+
 
 .profile-edit-container input {
   display: block;
@@ -294,7 +343,6 @@ h2{
   min-width: 300px
 }
 .profile-edit-container label {
- 
  font-family: sans-serif;
  font-weight: 100;
 }
@@ -305,7 +353,13 @@ h2{
   color: #FAFAFA;
   border-radius:  5px;
   background-color:#1d2642;
-  min-width: 300px
+  min-width: 300px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.profile-edit-container button{
+  opacity: 50%;
 }
 
 .profile-edit-container button:disabled{

@@ -44,16 +44,18 @@ class Profile extends React.Component {
         { loading && <Loading /> }
         { (
           <div className='profile-container'>
-            <p>{ user.name }</p>
-            <Link to="/profile/edit">Editar perfil</Link>
-
-            <p>{ user.email }</p>
-            <img
+             <img
               src={ user.image }
               data-testid="profile-image"
               alt=""
             />
-            <p>{ user.description }</p>
+            <p className='edit-name'>{ user.name }</p>
+           
+
+            <p className='edit-email'>{ user.email }</p>
+           
+            <p className='edit-description'>{ user.description }</p>
+            <Link to="/profile/edit"><button>Editar perfil</button> </Link>
 
           </div>
         ) }
