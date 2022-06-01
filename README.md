@@ -1,4 +1,4 @@
-# trybetunes 🎧
+# Music On-Line 🎧
 
 Página desenvolvida para estudos de React<br>
 A aplicação busca dados na API da Apple para montar em componentes a visualização das opções de artista e album. As informações são repassandas por estado e salvas em Local Storage.  <Br>
